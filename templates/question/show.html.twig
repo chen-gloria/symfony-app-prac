@@ -1,0 +1,8 @@
+<div>
+    <h4> Show Questions ({{ answers|length }})</h4>
+        <ol>
+        {% for answer in answers %} 
+            <li> {{ answer }} </li>
+        {% endfor %}
+        </ol>
+</div>

@@ -32,9 +32,15 @@ class QuestionController extends AbstractController
      */
     public function show($slug = null)
     {
-        return new Response(sprintf(
-            "Show All Questions '%s'.",
-            ucwords(str_replace('-', ' ', $slug))
-        ));
+        $answers = [
+            'Hey this is a cat,',
+            'Hey it is a car',
+            'This is answer 4'
+        ];
+
+        return $this->render('question/show.html.twig', [
+            'answers' => $answers,
+            'question' => ucwords(str_replace('-', ' ', $slug))
+        ]);
     }
 }
