@@ -21,10 +21,11 @@ class QuestionController extends AbstractController
      */
     public function homepage(): Response
     {
-        return $this->json([
-            'message' => 'The name of the page is homepage!',
-            'path' => 'src/Controller/QuestionController.php',
-        ]);
+        return $this->render('question/homepage.html.twig');
+        // return $this->json([
+        //     'message' => 'The name of the page is homepage!',
+        //     'path' => 'src/Controller/QuestionController.php',
+        // ]);
     }
 
     /**
@@ -37,6 +38,8 @@ class QuestionController extends AbstractController
             'Hey it is a car',
             'This is answer 4'
         ];
+
+        // dump($slug, $this);
 
         return $this->render('question/show.html.twig', [
             'answers' => $answers,
