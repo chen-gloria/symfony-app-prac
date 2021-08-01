@@ -1,8 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
 <div>
     <h4> Show Questions ({{ answers|length }})</h4>
+        {{ question }}
         <ol>
         {% for answer in answers %} 
             <li> {{ answer }} </li>
         {% endfor %}
         </ol>
 </div>
+{% endblock %}
