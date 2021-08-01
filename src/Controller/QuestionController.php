@@ -9,15 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuestionController extends AbstractController
 {
     /**
-     * @Route("/")
-     */
-    public function index()
-    {
-        return new Response ('This is the landing page');
-    }
-
-    /**
-     * @Route("/question", name="question")
+     * @Route("/", name="homepage")
      */
     public function homepage(): Response
     {
@@ -31,7 +23,7 @@ class QuestionController extends AbstractController
     /**
      * @Route("/questions/{slug}")
      */
-    public function show($slug = null)
+    public function show($slug)
     {
         $answers = [
             'Hey this is a cat,',
